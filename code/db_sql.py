@@ -25,6 +25,13 @@ def insert_data():
 
 def update_data():
     student_id = input("Enter id of the student to be updated: ")
+    fields = {
+        "1":("name","Enter the new name"),
+        "2":("address","Enter the new address"),
+        "3":("address","Enter the new age"),
+        "2":("address","Enter the new number"),
+
+    }
     name = input("Enter name: ")
     address = input("Enter Address: ")
     age = input("Enter age: ")
