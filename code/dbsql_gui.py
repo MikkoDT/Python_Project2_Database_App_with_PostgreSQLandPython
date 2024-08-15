@@ -1,4 +1,5 @@
 from tkinter import *
+from tkinter import ttk
 
 root = Tk()
 root.title("Student Management System")
@@ -29,5 +30,11 @@ Button(button_frame,text="Create Table").grid(row=0,column=0,padx=5)
 Button(button_frame,text="Add Data").grid(row=0,column=1,padx=5)
 Button(button_frame,text="Update Data").grid(row=0,column=2,padx=5)
 Button(button_frame,text="Delete Data").grid(row=0,column=3,padx=5)
+
+tree_frame = Frame(root)
+tree_frame.grid(row=2,column=0,padx=10,sticky="nsew")
+
+tree = ttk.Treeview(tree_frame)
+tree.pack()
 
 root.mainloop()
