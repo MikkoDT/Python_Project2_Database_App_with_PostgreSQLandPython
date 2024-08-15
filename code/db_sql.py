@@ -76,7 +76,7 @@ def update_data():
 def read_data():
     conn=psycopg2.connect(dbname="studentdb",user="postgres",password="00RaiserG#",host="localhost",port="5432")
     cur=conn.cursor()
-    cur.execute("select * from students:")
+    cur.execute("select * from students;")
     students = cur.fetchall()
     for student in students:
         print(f"Student to be deleted: ID: {student[0]}, Name: {student[1]}, Address: {student[2]}, Age: {student[3]}")
