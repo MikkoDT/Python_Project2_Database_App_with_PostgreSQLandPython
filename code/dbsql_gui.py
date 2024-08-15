@@ -25,6 +25,9 @@ phone_entry.grid(row=3,column=1,pady=2,sticky="ew")
 button_frame = Frame(root)
 button_frame.grid(row=1,column=0,pady=5,sticky="ew")
 
-Button(button_frame,text="Add Data").grid(row=0,column=0,padx=5)
+Button(button_frame,text="Create Table").grid(row=0,column=0,padx=5)
+Button(button_frame,text="Add Data").grid(row=0,column=1,padx=5)
+Button(button_frame,text="Update Data").grid(row=0,column=2,padx=5)
+Button(button_frame,text="Delete Data").grid(row=0,column=3,padx=5)
 
 root.mainloop()
