@@ -33,6 +33,10 @@ def insert_data():
     messagebox.showinfo("Information","Data inserted successfully!")
     refresh_treeview()
 
+def delete_data():
+    selected_item = tree.selection()[0]
+    print(selected_item)
+
 root = Tk()
 root.title("Student Management System")
 
@@ -61,7 +65,7 @@ button_frame.grid(row=1,column=0,pady=5,sticky="ew")
 Button(button_frame,text="Create Table").grid(row=0,column=0,padx=5)
 Button(button_frame,text="Add Data",command=insert_data).grid(row=0,column=1,padx=5)
 Button(button_frame,text="Update Data").grid(row=0,column=2,padx=5)
-Button(button_frame,text="Delete Data").grid(row=0,column=3,padx=5)
+Button(button_frame,text="Delete Data",command=delete_data).grid(row=0,column=3,padx=5)
 
 tree_frame = Frame(root)
 tree_frame.grid(row=2,column=0,padx=10,sticky="nsew")
