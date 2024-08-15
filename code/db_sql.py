@@ -28,14 +28,19 @@ def update_data():
     fields = {
         "1":("name","Enter the new name"),
         "2":("address","Enter the new address"),
-        "3":("address","Enter the new age"),
-        "2":("address","Enter the new number"),
-
+        "3":("age","Enter the new age"),
+        "4":("number","Enter the new number"),
     }
-    name = input("Enter name: ")
-    address = input("Enter Address: ")
-    age = input("Enter age: ")
-    number = input("Enter number: ")
+    print("Which field would you like to update? ")
+    for key in fields:
+        print(f"{key}:{fields[key][0]}")
+    field_choice = input("Enter the number of the field you want to update: ")
+    
+    if field_choice in fields:
+        field_name, prompt = fields[field_choice]
+        print(field_name,prompt)
+
+
     conn=psycopg2.connect(dbname="studentdb",user="postgres",password="00RaiserG#",host="localhost",port="5432")
     cur=conn.cursor()
     cur.execute("update students set name = %s ,address = %s , age = %s , number = %s where student_id = %s",(name,address,age,number,student_id))
