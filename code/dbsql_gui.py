@@ -53,6 +53,6 @@ tree.heading("student_id",text="ID",anchor=CENTER)
 tree.heading("name",text="Name",anchor=CENTER)
 tree.heading("address",text="Address",anchor=CENTER)
 tree.heading("age",text="Age",anchor=CENTER)
-tree.heading("number",text="Phone",anchor=CENTER)
+tree.heading("number",text="Phone Number",anchor=CENTER)
 
 root.mainloop()
