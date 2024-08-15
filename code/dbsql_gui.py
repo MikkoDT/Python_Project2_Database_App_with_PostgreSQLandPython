@@ -34,7 +34,10 @@ Button(button_frame,text="Delete Data").grid(row=0,column=3,padx=5)
 tree_frame = Frame(root)
 tree_frame.grid(row=2,column=0,padx=10,sticky="nsew")
 
-tree = ttk.Treeview(tree_frame)
+tree_scroll = Scrollbar(tree_frame)
+tree_scroll.pack(side=RIGHT,fill=Y)
+
+tree = ttk.Treeview(tree_frame,yscrollcommand=tree_scroll.set)
 tree.pack()
 
 root.mainloop()
