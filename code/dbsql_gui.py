@@ -22,4 +22,9 @@ Label(frame,text="Phone Number: ").grid(row=3,column=0,padx=2,sticky="w")
 phone_entry = Entry(frame)
 phone_entry.grid(row=3,column=1,pady=2,sticky="ew")
 
+button_frame = Frame(root)
+button_frame.grid(row=1,column=0,pady=5,sticky="ew")
+
+Button(button_frame,text="Add Data").grid(row=0,column=0,padx=5)
+
 root.mainloop()
