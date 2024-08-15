@@ -37,7 +37,16 @@ tree_frame.grid(row=2,column=0,padx=10,sticky="nsew")
 tree_scroll = Scrollbar(tree_frame)
 tree_scroll.pack(side=RIGHT,fill=Y)
 
-tree = ttk.Treeview(tree_frame,yscrollcommand=tree_scroll.set)
+tree = ttk.Treeview(tree_frame,yscrollcommand=tree_scroll.set,selectmode="browse")
 tree.pack()
+tree_scroll.config(command=tree.yview)
+
+tree['columns']=("student_id","name","address","age","number")
+tree.column("#0",width=0,stretch=NO)
+tree.column("student_id",anchor=CENTER,width=80)
+tree.column("name",anchor=CENTER,width=120)
+tree.column("address",anchor=CENTER,width=120)
+tree.column("age",anchor=CENTER,width=50)
+tree.column("number",anchor=CENTER,width=120)
 
 root.mainloop()
