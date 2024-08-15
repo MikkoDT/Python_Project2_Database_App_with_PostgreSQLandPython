@@ -26,10 +26,10 @@ def insert_data():
 def update_data():
     student_id = input("Enter id of the student to be updated: ")
     fields = {
-        "1":("name","Enter the new name"),
-        "2":("address","Enter the new address"),
-        "3":("age","Enter the new age"),
-        "4":("number","Enter the new number"),
+        "1":("name","Enter the new name: "),
+        "2":("address","Enter the new address: "),
+        "3":("age","Enter the new age: "),
+        "4":("number","Enter the new number: "),
     }
     print("Which field would you like to update? ")
     for key in fields:
@@ -38,12 +38,16 @@ def update_data():
     
     if field_choice in fields:
         field_name, prompt = fields[field_choice]
-        print(field_name,prompt)
-
+        new_value = input(prompt)
+        sql = f"update students set {field_name} = %s where student_id=%s"
+        cur.execute(sql,(new_value,student_id))
+        print(f"{field_name} updated successfully.")
+    else:
+        print("Invalid choice.")
 
     conn=psycopg2.connect(dbname="studentdb",user="postgres",password="00RaiserG#",host="localhost",port="5432")
     cur=conn.cursor()
-    cur.execute("update students set name = %s ,address = %s , age = %s , number = %s where student_id = %s",(name,address,age,number,student_id))
+    
     conn.commit()
     conn.close()
 
