@@ -35,7 +35,7 @@ def delete_data():
         print(f"Student to be deleted: ID: {student[0]}, Name: {student[1]}, Address: {student[2]}, Age: {student[3]}")
         choice = input("Are you sure you want to delete the student? (yes/no)")
         if choice.lower() == "yes":
-            cur.execute("delete from students where student_id = s%",(student_id,))
+            cur.execute("delete from students where student_id = %s",(student_id,))
             print("Student record deleted.")
         else:
             print("Deletion cancelled.")
@@ -75,4 +75,4 @@ def update_data():
 
 #insert_data()
 #update_data()
-delete_data
+delete_data()
