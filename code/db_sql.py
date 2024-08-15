@@ -25,6 +25,8 @@ def insert_data():
 
 def update_data():
     student_id = input("Enter id of the student to be updated: ")
+    conn=psycopg2.connect(dbname="studentdb",user="postgres",password="00RaiserG#",host="localhost",port="5432")
+    cur=conn.cursor()
     fields = {
         "1":("name","Enter the new name: "),
         "2":("address","Enter the new address: "),
@@ -44,9 +46,6 @@ def update_data():
         print(f"{field_name} updated successfully.")
     else:
         print("Invalid choice.")
-
-    conn=psycopg2.connect(dbname="studentdb",user="postgres",password="00RaiserG#",host="localhost",port="5432")
-    cur=conn.cursor()
     
     conn.commit()
     conn.close()
