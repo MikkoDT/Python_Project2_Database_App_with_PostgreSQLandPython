@@ -30,7 +30,7 @@ def insert_data():
     query = "insert into students(name,address,age,number) values (%s,%s,%s,%s)"
     parameters = (name_entry.get(),address_entry.get(),age_entry.get(),phone_entry.get())
     run_query(query,parameters)
-    messagebox.showinfo("Information","Data inseted successfully!")
+    messagebox.showinfo("Information","Data inserted successfully!")
     refresh_treeview()
 
 root = Tk()
