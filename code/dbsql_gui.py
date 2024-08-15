@@ -49,4 +49,10 @@ tree.column("address",anchor=CENTER,width=120)
 tree.column("age",anchor=CENTER,width=50)
 tree.column("number",anchor=CENTER,width=120)
 
+tree.heading("student_id",text="ID",anchor=CENTER)
+tree.heading("name",text="Name",anchor=CENTER)
+tree.heading("address",text="Address",anchor=CENTER)
+tree.heading("age",text="Age",anchor=CENTER)
+tree.heading("number",text="Phone",anchor=CENTER)
+
 root.mainloop()
