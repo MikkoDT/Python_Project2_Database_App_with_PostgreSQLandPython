@@ -73,6 +73,39 @@ def update_data():
     conn.commit()
     conn.close()
 
-#insert_data()
-#update_data()
-delete_data()
+def read_data():
+    conn=psycopg2.connect(dbname="studentdb",user="postgres",password="00RaiserG#",host="localhost",port="5432")
+    cur=conn.cursor()
+    cur.execute("select * from students:")
+    students = cur.fetchall()
+    for student in students:
+        print(f"Student to be deleted: ID: {student[0]}, Name: {student[1]}, Address: {student[2]}, Age: {student[3]}")
+
+    conn.commit()
+    conn.close()
+
+
+while True:
+    print("\n Welcome to the student database management system!")
+    print("1. Create Table")
+    print("2. Insert Data")
+    print("3. Read Data")
+    print("4. Update Data")
+    print("5. Delete Data")
+    print("6. Exit")
+    choice = input("Enter your choice (1-6): ")
+    if choice=='1':
+        create_table()
+    elif choice=='2':
+        insert_data()
+    elif choice=='3':
+        read_data()
+    elif choice=='4':
+        update_data()
+    elif choice=='5':
+        delete_data()
+    elif choice=='6':
+        break
+    else:
+        print("Invalid choice, please enter a number between 1 to 6: ")
+        
