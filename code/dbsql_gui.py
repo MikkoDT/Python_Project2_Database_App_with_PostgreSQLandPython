@@ -6,4 +6,8 @@ root.title("Student Management System")
 frame = LabelFrame(root,text="Student Data")
 frame.grid(row=0,column=0,padx=10,pady=10,sticky="ew")
 
+Label(frame,text="Name: ").grid(row=0,column=0,padx=2,sticky="w")
+name_entry = Entry(frame)
+name_entry.grid(row=0,column=1,pady=2,sticky="ew")
+
 root.mainloop()
