@@ -35,7 +35,12 @@ def insert_data():
 
 def delete_data():
     selected_item = tree.selection()[0]
-    print(selected_item)
+    student_id = tree.item(selected_item)['values'][0]
+    query = "delete from students where student_id=%s"
+    parameters = (student_id,)
+    run_query(query,parameters)
+    messagebox.showinfo("Information","Data deleted successfully!")
+    refresh_treeview()
 
 root = Tk()
 root.title("Student Management System")
